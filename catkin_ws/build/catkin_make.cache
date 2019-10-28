@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/hiyop/Projects/Robotik_WS19_20/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/hiyop/Projects/Robotik_WS19_20/catkin_ws/install -G Unix Makefiles
