@@ -1,0 +1,8 @@
+prefix=/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/assignment2_publisher_subscriber
+
+Name: assignment2_publisher_subscriber
+Description: Description of assignment2_publisher_subscriber
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/assignment2_publisher_subscriber/lib 
+Requires: 

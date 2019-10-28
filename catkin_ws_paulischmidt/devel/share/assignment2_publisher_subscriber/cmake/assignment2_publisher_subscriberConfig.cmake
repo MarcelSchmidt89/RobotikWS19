@@ -1,0 +1,1 @@
+/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/assignment2_publisher_subscriber/share/assignment2_publisher_subscriber/cmake/assignment2_publisher_subscriberConfig.cmake
