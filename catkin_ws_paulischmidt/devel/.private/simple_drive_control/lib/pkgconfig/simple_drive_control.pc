@@ -1,0 +1,8 @@
+prefix=/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/simple_drive_control
+
+Name: simple_drive_control
+Description: Description of simple_drive_control
+Version: 0.0.1
+Cflags: 
+Libs: -L/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/simple_drive_control/lib 
+Requires: 
