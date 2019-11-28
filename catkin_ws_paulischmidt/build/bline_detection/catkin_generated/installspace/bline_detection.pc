@@ -1,0 +1,8 @@
+prefix=/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/install
+
+Name: bline_detection
+Description: Description of bline_detection
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/install/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/tick_calibration
+
+Name: tick_calibration
+Description: Description of tick_calibration
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/tick_calibration/lib 
+Requires: 
