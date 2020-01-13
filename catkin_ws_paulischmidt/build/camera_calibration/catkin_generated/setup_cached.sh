@@ -8,8 +8,6 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/camera_calibration:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/camera_calibration/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/camera_calibration/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/build/camera_calibration"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/camera_calibration/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/src/camera_calibration:$ROS_PACKAGE_PATH"

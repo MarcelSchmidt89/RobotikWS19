@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/pd_controller/setup.sh

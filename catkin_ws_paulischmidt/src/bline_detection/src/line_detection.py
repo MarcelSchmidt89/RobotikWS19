@@ -145,12 +145,7 @@ def line_detection(img_threshold, img_raw):
 
         #cv2.circle(cv_image, point1, 10, (255,0,0), -1)
 
-        #cv2.circle(cv_image, point2, 10, (255,0,0), -1)
-
-
-
-
-  
+        #cv2.circle(cv_image, point2, 10, (255,0,0), -1) 
 
 
         img_raw = bridge.cv2_to_imgmsg(raw_image_cv, "rgb8") 
@@ -158,7 +153,7 @@ def line_detection(img_threshold, img_raw):
     except CvBridgeError as e:
       print(e)
 
-    return img_raw, m1, n1, m2, n2, m3, n3
+    return img_raw
 
 def threshold_publisher():
     global ros_img
@@ -193,7 +188,7 @@ def threshold_publisher():
         m3_msg = Float32()
         n3_msg = Float32()
 
-        img_msg, m1_msg, n1_msg, m2_msg, n2_msg, m3_msg, n3_msg = line_detection(threshold_img, raw_img)
+        img_msg = line_detection(threshold_img, raw_img)
 #        img_msg.header = bild.header
  #       img_msg.height = bild.height
 #        img_msg.width = bild.width

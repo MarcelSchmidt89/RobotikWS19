@@ -1,0 +1,8 @@
+prefix=/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/install
+
+Name: odomitry_tracker
+Description: Description of odomitry_tracker
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/install/lib 
+Requires: 
