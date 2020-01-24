@@ -131,19 +131,17 @@ def spline_publisher():
     rospy.init_node('spline_publisher')
     spline_pub = rospy.Publisher('spline', Marker, queue_size=1)
 
-    click_pub = rospy.Publisher('clicked', Marker, queue_size=1)
-
-    lookahead_point_pub = rospy.Publisher('lookahead', Marker, queue_size = 1)
-
-    rospy.Subscriber("/clicked_point", PointStamped, click_callback)
-
-    #spline_pub2 = rospy.Publisher('spline2', Marker, queue_size=1)
+    spline_pub2 = rospy.Publisher('spline2', Marker, queue_size=1)
     
     rate = rospy.Rate(30) # 10hz
+
 
     script_dir = os.path.dirname(__file__) #<-- absolute dir the script is in
     rel_path = "data/lane1.npy"
     lane1_file_path = os.path.join(script_dir, rel_path)
+
+
+#### Lane 1
 
     rel_path = "data/lane1.npy"
     lane1_file_path = os.path.join(script_dir, rel_path)
@@ -152,24 +150,29 @@ def spline_publisher():
 
     offset = int(len(lane1_array) / 20) 
 
-    sample_points = []
- 
-    for i in range(20):
-        index = i * offset
-        sample_points.append(lane1_array[index])
-
-    sample_points.append(lane1_array[-1])
-
-
+    sample_points = lane1_array[[0, 25, 50, 75, 209, 225, 259, 275, 309, 325, 350, 375, 409, 509, 575, 639, 750, 800, 848, 900, 948, 975, 1028, 1148, 1200, 1276], :]
     sample_points_np = np.array(sample_points)
-
     lane1_arc_array = sample_points_np[:,0]
     lane1_x_array = sample_points_np[:,1]
     lane1_y_array = sample_points_np[:,2]
 
-    lane1_x_spline = CubicSpline(lane1_arc_array, lane1_x_array)
+    lane1_x_spline = CubicSpline(lane1_arc_array, lane1_x_array, bc_type='periodic')
+    lane1_y_spline = CubicSpline(lane1_arc_array, lane1_y_array, bc_type='periodic')
 
-    lane1_y_spline = CubicSpline(lane1_arc_array, lane1_y_array)
+#### Lane 2
+
+    rel_path = "data/lane2.npy"
+    lane1_file_path = os.path.join(script_dir, rel_path)
+    lane2_array = np.load(lane1_file_path)
+
+    sample_points = lane2_array[[0, 25, 50, 75, 100, 125, 150, 209, 400, 500, 600, 738, 800, 825, 850, 875, 900, 925, 949, 1150, 1300, 1476], :]
+    sample_points_np = np.array(sample_points)
+    lane2_arc_array = sample_points_np[:,0]
+    lane2_x_array = sample_points_np[:,1]
+    lane2_y_array = sample_points_np[:,2]
+
+    lane2_x_spline = CubicSpline(lane2_arc_array, lane2_x_array, bc_type='periodic')
+    lane2_y_spline = CubicSpline(lane2_arc_array, lane2_y_array, bc_type='periodic')
 
         
     

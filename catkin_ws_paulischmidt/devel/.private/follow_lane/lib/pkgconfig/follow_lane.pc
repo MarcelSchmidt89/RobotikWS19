@@ -1,0 +1,8 @@
+prefix=/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/follow_lane
+
+Name: follow_lane
+Description: Description of follow_lane
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/hiyop/Projects/Robotik_WS19_20/catkin_ws_paulischmidt/devel/.private/follow_lane/lib 
+Requires: 

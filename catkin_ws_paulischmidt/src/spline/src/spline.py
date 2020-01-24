@@ -33,60 +33,29 @@ def spline_publisher():
 
     offset = int(len(lane1_array) / 20) 
 
-    sample_points = []
- 
-    for i in range(20):
-        index = i * offset
-        sample_points.append(lane1_array[index])
-
-    sample_points.append(lane1_array[-1])
-
-
-    sample_points_np = np.array(sample_points)    
-
-
+    sample_points = lane1_array[[0, 25, 50, 75, 209, 225, 259, 275, 309, 325, 350, 375, 409, 509, 575, 639, 750, 800, 848, 900, 948, 975, 1028, 1148, 1200, 1276], :]
+    sample_points_np = np.array(sample_points)
     lane1_arc_array = sample_points_np[:,0]
     lane1_x_array = sample_points_np[:,1]
     lane1_y_array = sample_points_np[:,2]
 
-    print(lane1_arc_array)
-
-    lane1_x_spline = CubicSpline(lane1_arc_array, lane1_x_array)
-
-    lane1_y_spline = CubicSpline(lane1_arc_array, lane1_y_array)
+    lane1_x_spline = CubicSpline(lane1_arc_array, lane1_x_array, bc_type='periodic')
+    lane1_y_spline = CubicSpline(lane1_arc_array, lane1_y_array, bc_type='periodic')
 
 #### Lane 2
 
     rel_path = "data/lane2.npy"
     lane1_file_path = os.path.join(script_dir, rel_path)
-
     lane2_array = np.load(lane1_file_path)
 
-    offset = int(len(lane2_array) / 20)
-
-    sample_points = []
- 
-    for i in range(20):
-        index = i * offset
-        sample_points.append(lane2_array[index])
-
-    sample_points.append(lane2_array[-1])
-
-
-    sample_points_np = np.array(sample_points)    
-
-
+    sample_points = lane2_array[[0, 25, 50, 75, 100, 125, 150, 209, 400, 500, 600, 738, 800, 825, 850, 875, 900, 925, 949, 1150, 1300, 1476], :]
+    sample_points_np = np.array(sample_points)
     lane2_arc_array = sample_points_np[:,0]
     lane2_x_array = sample_points_np[:,1]
     lane2_y_array = sample_points_np[:,2]
 
-    print(lane1_arc_array)
-
-    print(lane2_array[-1])
-
-    lane2_x_spline = CubicSpline(lane2_arc_array, lane2_x_array)
-
-    lane2_y_spline = CubicSpline(lane2_arc_array, lane2_y_array)
+    lane2_x_spline = CubicSpline(lane2_arc_array, lane2_x_array, bc_type='periodic')
+    lane2_y_spline = CubicSpline(lane2_arc_array, lane2_y_array, bc_type='periodic')
 
 
 
@@ -123,7 +92,7 @@ def spline_publisher():
         # marker line points
         marker.points = []
 
-        for i in range(1280):
+        for i in range(2000):
             point = Point()
             point.x = lane1_x_spline(float(i)/100)
             point.y = lane1_y_spline(float(i)/100)
@@ -164,7 +133,7 @@ def spline_publisher():
         # marker line points
         marker2.points = []
 
-        for i in range(1476):
+        for i in range(2000):
             point = Point()
             point.x = lane2_x_spline(float(i)/100)
             point.y = lane2_y_spline(float(i)/100)
